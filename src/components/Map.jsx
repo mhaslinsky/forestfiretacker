@@ -2,6 +2,11 @@ import { useState } from "react";
 import ReactMapGL from "react-map-gl";
 import classes from "./Map.module.css";
 import Sidebar from "./Sidebar";
+import mapboxgl from "mapbox-gl";
+
+mapboxgl.workerClass =
+  // eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 function Map({ children }) {
   const [viewport, setViewport] = useState({
