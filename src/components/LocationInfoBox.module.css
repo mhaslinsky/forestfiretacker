@@ -1,0 +1,20 @@
+.location {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  font-family: monospace;
+  position: absolute;
+  padding: 3px;
+  border-radius: 1px;
+  box-shadow: darkblue;
+  font-size: 20px;
+  width: 450px;
+  top: 150px;
+  right: 10px;
+  border: darkgrey 2px solid;
+  z-index: 1;
+}
+
+.location h2 {
+  padding: 0px;
+  margin: 11px;
+}
