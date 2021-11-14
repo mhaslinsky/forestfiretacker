@@ -37,9 +37,7 @@ function Map({ children }) {
       onViewportChange={(nextViewport) => {
         setViewport(nextViewport);
       }}
-      mapboxApiAccessToken={
-        "pk.eyJ1IjoibWhhc2xpbnNreSIsImEiOiJja3Qwb3A1bWkwN2JzMm9vdGxpaHhidHpsIn0.HIqeN35o4SBdOFZXWmn6WQ"
-      }
+      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
     >
       <Sidebar
         lng={viewport.longitude.toFixed(4)}

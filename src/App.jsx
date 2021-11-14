@@ -31,6 +31,7 @@ function App() {
         if (ev.categories[0].id === 8) {
           return (
             <Marker
+              key={ev.id}
               longitude={ev.geometries[0].coordinates[0]}
               latitude={ev.geometries[0].coordinates[1]}
               onClick={() => setLocationInfo({ id: ev.id, title: ev.title })}
