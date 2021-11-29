@@ -15,9 +15,7 @@ function App() {
   useEffect(() => {
     async function fetchEvents() {
       setLoading(true);
-      const res = await fetch(
-        "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events"
-      );
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v2.1/events");
       const { events } = await res.json();
       setEventData(events);
       setLoading(false);
@@ -50,9 +48,15 @@ function App() {
   );
 
   return (
-    <div className={classes.container}>
-      {!loading ? <Map>{markers}</Map> : <Loading></Loading>}
-      {locationInfo && <LocationInfoBox info={locationInfo} />}
+    <div>
+      {!loading ? (
+        <Map className={classes.container}>
+          {markers}
+          {locationInfo && <LocationInfoBox info={locationInfo} />}
+        </Map>
+      ) : (
+        <Loading></Loading>
+      )}
     </div>
   );
 }
